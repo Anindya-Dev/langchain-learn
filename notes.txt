@@ -1,0 +1,17 @@
+LangChain:
+- Framework that sits on top of LLMs
+- HumanMessage / AIMessage = conversation history
+- Send full history each time = memory
+- System prompt = defines AI behavior and restrictions
+- Chain = connecting components with | operator
+- Context window = limit on how much history you can send
+
+RAG:
+- Retrieve relevant chunks from vector database
+- Augment the prompt with those chunks as context
+- Generate answer based only on that context
+- chunk_size = how big each piece of text is
+- chunk_overlap = copy end of previous chunk to maintain context
+- k = how many chunks to retrieve
+- retriever.invoke() = search vector database
+- prompt | llm = chain, output of prompt feeds into llm
