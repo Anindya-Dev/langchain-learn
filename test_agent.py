@@ -20,8 +20,12 @@ def add_numbers(a:float,b:float)->float:
 def multiply_numbers(a:float,b:float)->float:
     """Multiply two numbers together"""
     return a*b
+@tool
+def calculate_percentage(value: float, percentage: float) -> float:
+    """Calculate what percentage of a value is"""
+    return (value/100)*percentage
 
-tools=[add_numbers,multiply_numbers]
+tools=[add_numbers,multiply_numbers,calculate_percentage]
 
 prompt=ChatPromptTemplate.from_messages([
     ("system","You are a helpgul assistant with access to math tools."),
@@ -32,5 +36,5 @@ prompt=ChatPromptTemplate.from_messages([
 agent=create_tool_calling_agent(llm,tools,prompt)
 executor=AgentExecutor(agent=agent, tools=tools, verbose=True)
 
-response=executor.invoke({"input":"What is 15 multiplied by 7, then add 23 to the result"})
+response=executor.invoke({"input":"What is 20 percentage of 350, then add 15 to it?"})
 response['output']
