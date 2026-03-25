@@ -27,3 +27,5 @@ pip install langchain langchain-groq langchain-community
 langchain-text-splitters chromadb sentence-transformers
 
 Add your GROQ_API_KEY to a .env file.
+
+## New things to be updated soon
