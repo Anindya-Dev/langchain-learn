@@ -28,4 +28,4 @@ langchain-text-splitters chromadb sentence-transformers
 
 Add your GROQ_API_KEY to a .env file.
 
-## A repo of my learnings in langchain
+A repo of my learnings in langchain and its usecases
